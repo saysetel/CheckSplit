@@ -66,17 +66,15 @@ struct ContentView: View {
                 
                 Section {
                     Text("Per person:")
-                        .foregroundColor(.black)
                         .bold()
                     Text(amountPerPerson, format: currencyFotmatter)
                     Text("Total:")
-                        .foregroundColor(.black)
                         .bold()
                     Text(total, format: currencyFotmatter)
                     Text("Total amount of tips:")
-                        .foregroundColor(.black)
                         .bold()
                     Text(totalTips, format: currencyFotmatter)
+                        .foregroundColor((tipProcent == 0) ? .red : .black)
                 }
             }
             .navigationTitle(Text("CheckSplit"))
